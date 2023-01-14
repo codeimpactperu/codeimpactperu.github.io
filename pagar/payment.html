@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pagar servicio</title>
+    <meta content="" name="description">
+    <meta content="Code Impact" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/icons/logoof.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1><a href="">
+                        <img src="../assets/icons/logoof.png" class="img-fluid" style="margin-bottom: 5px">
+                        Code Impact
+                    </a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="https://codeimpactperu.github.io/" target="_blank">Sobre
+                            nosotros</a></li>
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients clients">
+            <div class="container">
+                <div class="row">
+                    <br>
+                </div>
+            </div>
+        </section><!-- End Clients Section -->
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Pagar cursos profesionales</h2>
+                </div>
+
+                <hr><br>
+
+                <div class="row content">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                        <p>
+                            Elija el método de pago que prefiera en la parte derecha, presionando el botón
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i> Paypal</li>
+                            <li><i class="ri-check-double-line"></i> Tarjeta de débito/crédito</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <div id="smart-button-container">
+                            <div style="text-align: center;">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </div>
+                        <script
+                            src="https://www.paypal.com/sdk/js?client-id=Ab4LEj_rkP5cxY62VL65bHFcq0Gtyh62l34MSJ-4yCrvuwN7b84Iyyv1YAFpEAbdBkl8XnHuhW-OMzrL&enable-funding=venmo&currency=USD"
+                            data-sdk-integration-source="button-factory"></script>
+                        <script>
+                            function initPayPalButton() {
+                                paypal.Buttons({
+                                    style: {
+                                        shape: 'rect',
+                                        color: 'gold',
+                                        layout: 'vertical',
+                                        label: 'pay',
+                        
+                                    },
+                        
+                                    createOrder: function (data, actions) {
+                                        return actions.order.create({
+                                            purchase_units: [{ "description": "Cursos profesionales", "amount": { "currency_code": "USD", "value": 15 } }]
+                                        });
+                                    },
+                        
+                                    onApprove: function (data, actions) {
+                                        return actions.order.capture().then(function (orderData) {
+                        
+                                            // Full available details
+                                            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        
+                                            // Show a success message within this page, e.g.
+                                            const element = document.getElementById('paypal-button-container');
+                                            element.innerHTML = '';
+                                            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                        
+                                            // Or go to another URL:  actions.redirect('thank_you.html');
+                        
+                                        });
+                                    },
+                        
+                                    onError: function (err) {
+                                        console.log(err);
+                                    }
+                                }).render('#paypal-button-container');
+                            }
+                            initPayPalButton();
+                        </script>
+                    </div>
+                </div>
+
+                <br><hr>
+
+            </div>
+        </section>
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Contáctanos</h2>
+                    <h5>Si tienes alguna duda o consulta usa WhatsApp</h5>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-about">
+                            <h3>Code Impact</h3>
+                            <p> Somos tus aliados en la tecnología
+                            </p>
+                            <div class="social-links">
+                                <a href="https://wa.link/dcxqxo" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info">
+                            <div>
+                                <i class="ri-map-pin-line"></i>
+                                <p>Lima, Perú</p>
+                            </div>
+
+                            <div>
+                                <i class="ri-mail-send-line"></i>
+                                <p>codeimpactperu@gmail.com</p>
+                            </div>
+
+                            <div>
+                                <i class="ri-phone-line"></i>
+                                <p>+51 9889989913</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+                        <form action="mailto:codeimpactperu@gmail.com" method="GET" class="php-email-form">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Tu email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje"
+                                    required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 text-lg-left text-center">
+                    <div class="copyright">
+                        &copy; Copyright <strong>Code Impact Perú</strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                        <a href="#intro" class="scrollto">Home</a>
+                        <a href="#about" class="scrollto">Sobre nosotros</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
